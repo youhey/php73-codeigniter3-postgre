@@ -4,7 +4,6 @@ services:
     php:
         build:
             context: ./docker/php
-        restart: always
         ports:
             - 8080:80
         volumes:
@@ -15,4 +14,10 @@ services:
             - /work/logs/
             - /work/build/
         environment:
-            - TZ=Asia/Tokyo
+            TZ: Asia/Tokyo
+    postgres:
+        image: postgres:9.4-alpine
+        ports:
+            - 5432:5432
+        environment:
+          POSTGRES_PASSWORD: secret
