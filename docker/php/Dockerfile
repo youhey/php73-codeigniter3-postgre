@@ -54,8 +54,16 @@ RUN set -eux; \
     | php -- --install-dir=/usr/local/bin --filename=composer ;
 
 #--------------------------------------------------------------------------
+# Apache Documento root
+#--------------------------------------------------------------------------
+ENV APACHE_DOCUMENT_ROOT /work/public
+
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+
+#--------------------------------------------------------------------------
 # Environment
 #--------------------------------------------------------------------------
-VOLUME /var/www/html
+VOLUME /work
 
-WORKDIR /var/www/html
+WORKDIR /work

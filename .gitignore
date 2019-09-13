@@ -39,3 +39,10 @@ _ide_helper.php
 .envs/
 Homestead.json
 Homestead.yaml
+
+# Codeigniter
+application/cache/*
+!application/cache/index.html
+application/logs/*
+!application/logs/index.html
+!application/*/.htaccess
