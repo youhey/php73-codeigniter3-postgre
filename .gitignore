@@ -1,0 +1,41 @@
+.DS_Store
+*~
+~*
+*.swp
+*.bak
+*.bk
+Thumbs.db
+desktop.ini
+tmp
+/logs/*
+/log/*
+*.log
+
+# PHP
+/vendor/
+.phpunit.result.cache
+
+# js
+/node_modules
+yarn-error.log
+npm-debug.log
+
+# misc
+.vimsessions
+tags
+/.vagrant
+/.idea
+/.vscode
+/.vagrant
+workspace.xml
+vcs.xml
+modules.xml
+*.iml
+/.bin/
+.phpstorm.meta.php
+_ide_helper.php
+.deptrac.cache
+.env
+.envs/
+Homestead.json
+Homestead.yaml

@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+    php:
+        build:
+            context: ./docker/php
+        restart: always
+        ports:
+            - 8080:80
+        volumes:
+            - .:/var/www/html:cached
+            # exclude volumes
+            - /work/.git/
+            - /work/docker/
+            - /work/logs/
+            - /work/build/
+        environment:
+            - TZ=Asia/Tokyo
