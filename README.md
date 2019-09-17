@@ -12,6 +12,19 @@ docker-compose build
 docker-compose up -d
 ```
 
+## Step 3. Installing PHP dependency packages
+
+```console
+docker-compose exec php composer install
+```
+
+## Test
+
+```console
+docker-compose exec php composer test
+# or `docker-compose exec php php vendor/bin/phpunit -c application/tests/`
+```
+
 ## Confirmation
 
 ### PHP Info
